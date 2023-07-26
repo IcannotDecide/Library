@@ -1,0 +1,4 @@
+Add cards to html to test display
+
+On books have a title, author, num of pages and if you have 
+read the book
