@@ -45,10 +45,11 @@ button.addEventListener("click", displayNone)
 const popup = document.querySelector(".popup");
 function displayNone() {
     popup.style.display = "flex";
+    document.addEventListener("click", removePopup)
 }
 
-
-
-
-
-
+function removePopup(e) {
+  if (e.target === popup) {
+    popup.style.display = "none";
+  }
+}
