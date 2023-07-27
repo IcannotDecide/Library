@@ -1,3 +1,5 @@
 Create a div. In the div add for p tags and inside each one is 
 myLibrary[i].title, author, pages, status
 On next loop create a new div and do same thing
+
+Use data atr
