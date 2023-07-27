@@ -22,5 +22,17 @@ const cards = document.querySelector(".cards");
 myLibrary.push(book1, book2, book3);
 
 for (let i = 0; i < myLibrary.length; i++) {
-  cards.innerHTML = `<p>${myLibrary[i].title}`
+
+  let newDiv = document.createElement("div");
+  newDiv.dataset.index = i;
+  let title = document.createElement("p");  
+  let author = document.createElement("p");
+  let pages = document.createElement("p");
+  let status = document.createElement("p");
+  title.innerText = myLibrary[i].title;
+  author.innerText = myLibrary[i].author;
+  pages.innerText = myLibrary[i].pages;
+  status.innerText = myLibrary[i].status;
+  newDiv.append(title, author, pages, status);
+  cards.append(newDiv);
 }
