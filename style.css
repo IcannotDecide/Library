@@ -1,3 +1,14 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.addBook {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(100px, auto));
@@ -7,4 +18,26 @@
 
 .cards div {
   border: solid black;
+}
+
+.popup {
+  position: absolute;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, .5);
+}
+
+.popup-content {
+  width: 500px;
+  height: 500px;
+  background-color: pink;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
 }
