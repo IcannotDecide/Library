@@ -1,4 +1,3 @@
-Add cards to html to test display
-
-On books have a title, author, num of pages and if you have 
-read the book
+Create a div. In the div add for p tags and inside each one is 
+myLibrary[i].title, author, pages, status
+On next loop create a new div and do same thing
