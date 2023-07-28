@@ -32,7 +32,11 @@ function addBookToLibrary(title, author, pages, status) {
     createdTitle.innerText = myLibrary[myLibraryLength].title;
     createdAuthor.innerText = myLibrary[myLibraryLength].author;
     createdPages.innerText = myLibrary[myLibraryLength].pages;
-    createdStatus.innerText = myLibrary[myLibraryLength].status;
+    if (myLibrary[myLibraryLength].status) {
+      createdStatus.innerText = "read"
+    } else {
+      createdStatus.innerText = "not read"
+    }
     createdButton.innerText = "Remove Book";
     newDiv.append(createdTitle, createdAuthor, createdPages, createdStatus, createdButton);
     createdButton.addEventListener("click", removeDiv);
@@ -71,9 +75,13 @@ function addBook(e) {
   const addTitle  = document.querySelector("#title").value;
   const addAuthor  = document.querySelector("#author").value;
   const addPages  = document.querySelector("#pages").value;
+  const addStatus = document.querySelector("#status").checked;
+  console.log(addStatus)
+
+  
 
   if (addTitle !== "" && addAuthor !== "" && addPages !== "" && +addPages > 0) {
-    addBookToLibrary(addTitle, addAuthor, addPages, "not read");
+    addBookToLibrary(addTitle, addAuthor, addPages, addStatus);
     popup.style.display = "none";
     e.preventDefault();
   }
