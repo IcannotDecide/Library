@@ -28,15 +28,25 @@ function addBookToLibrary(title, author, pages, status) {
     let createdAuthor = document.createElement("p");
     let createdPages = document.createElement("p");
     let createdStatus = document.createElement("p");
+    let createdButton = document.createElement("button");
     createdTitle.innerText = myLibrary[myLibraryLength].title;
     createdAuthor.innerText = myLibrary[myLibraryLength].author;
     createdPages.innerText = myLibrary[myLibraryLength].pages;
     createdStatus.innerText = myLibrary[myLibraryLength].status;
-    newDiv.append(createdTitle, createdAuthor, createdPages, createdStatus);
+    createdButton.innerText = "Remove Book";
+    newDiv.append(createdTitle, createdAuthor, createdPages, createdStatus, createdButton);
+    createdButton.addEventListener("click", removeDiv);
     cards.append(newDiv);
+    
+
+    // div[data-index=${myLibrary[myLibraryLength]}]
 };
 
 // addBookToLibrary();
+
+function removeDiv(e) {
+  e.target.parentElement.remove();
+};
 
 const button = document.querySelector("#popup-button");
 button.addEventListener("click", displayNone);
@@ -69,3 +79,4 @@ function addBook(e) {
   }
   return
 }
+
