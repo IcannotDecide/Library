@@ -27,6 +27,7 @@ function addBookToLibrary(title, author, pages, status) {
     let createdAuthor = document.createElement("p");
     let createdPages = document.createElement("p");
     let createdStatus = document.createElement("p");
+    let changeRead = document.createElement("button");
     let createdButton = document.createElement("button");
     createdTitle.innerText = myLibrary[myLibraryLength].title;
     createdAuthor.innerText = myLibrary[myLibraryLength].author;
@@ -36,8 +37,10 @@ function addBookToLibrary(title, author, pages, status) {
     } else {
       createdStatus.innerText = "not read"
     }
+    changeRead.innerText = "Change Status";
+    changeRead.addEventListener("click", changeStatus)
     createdButton.innerText = "Remove Book";
-    newDiv.append(createdTitle, createdAuthor, createdPages, createdStatus, createdButton);
+    newDiv.append(createdTitle, createdAuthor, createdPages, createdStatus, changeRead, createdButton);
     createdButton.addEventListener("click", removeDiv);
     cards.append(newDiv);
     
@@ -46,6 +49,13 @@ function addBookToLibrary(title, author, pages, status) {
 };
 
 // addBookToLibrary();
+
+function changeStatus(e) {
+  let currentStatus = e.target.parentElement.children[3].innerText;
+  console.log(currentStatus, currentStatus === "read")
+  if (currentStatus === "read") return e.target.parentElement.children[3].innerText = "not read";
+  return e.target.parentElement.children[3].innerText = "read"
+};
 
 function removeDiv(e) {
   e.target.parentElement.remove();
