@@ -20,7 +20,6 @@ function Book(title, author, pages, status) {
 function addBookToLibrary(title, author, pages, status) {
   
   myLibrary.push(new Book(title, author, pages, status));
-  console.log(myLibrary)
   let myLibraryLength = myLibrary.length-1;
     let newDiv = document.createElement("div");
     newDiv.dataset.index = myLibraryLength;
@@ -75,10 +74,7 @@ function addBook(e) {
   const addTitle  = document.querySelector("#title").value;
   const addAuthor  = document.querySelector("#author").value;
   const addPages  = document.querySelector("#pages").value;
-  const addStatus = document.querySelector("#status").checked;
-  console.log(addStatus)
-
-  
+  const addStatus = document.querySelector("#status").checked;  
 
   if (addTitle !== "" && addAuthor !== "" && addPages !== "" && +addPages > 0) {
     addBookToLibrary(addTitle, addAuthor, addPages, addStatus);
