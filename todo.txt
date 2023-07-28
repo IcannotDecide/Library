@@ -1,3 +1,1 @@
-Add a remove book button
-
-Add event listener to the remove button when we create the card
+Make it look nice
