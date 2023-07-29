@@ -86,7 +86,7 @@ function addBook(e) {
   const addPages  = document.querySelector("#pages").value;
   const addStatus = document.querySelector("#status").checked;  
 
-  if (addTitle !== "" && addAuthor !== "" && addPages !== "" && +addPages > 0) {
+  if (addTitle !== "" && addAuthor !== "" && addPages !== "" && +addPages > 0 && +addPages < 100000) {
     addBookToLibrary(addTitle, addAuthor, addPages, addStatus);
     popup.style.display = "none";
     e.preventDefault();
