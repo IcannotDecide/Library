@@ -52,7 +52,6 @@ function addBookToLibrary(title, author, pages, status) {
 
 function changeStatus(e) {
   let currentStatus = e.target.parentElement.children[3].innerText;
-  console.log(currentStatus, currentStatus === "read")
   if (currentStatus === "read") return e.target.parentElement.children[3].innerText = "not read";
   return e.target.parentElement.children[3].innerText = "read"
 };
