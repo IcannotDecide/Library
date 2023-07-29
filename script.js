@@ -1,4 +1,6 @@
 const cards = document.querySelector(".cards");
+const form = document.querySelector("form");
+console.log(form);
 
 let myLibrary = [];
 
@@ -65,6 +67,7 @@ button.addEventListener("click", displayNone);
 
 const popup = document.querySelector(".popup");
 function displayNone() {
+    form.reset();
     popup.style.display = "flex";
     document.addEventListener("click", removePopup)
 };
