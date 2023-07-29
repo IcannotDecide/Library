@@ -1,6 +1,18 @@
+:root {
+  --white: #f0f9ff;
+  --body-background: #bae6fd;
+  --button-colour: #0ea5e9;
+  --card-background: #082f49;
+  --popup-background: rgba(0, 0, 0, .5);
+}
+
 * {
   padding: 0;
   margin: 0;
+}
+
+body {
+  background-color: var(--body-background);
 }
 
 .addBook {
@@ -15,18 +27,28 @@
   grid-auto-rows: minmax(100px, auto);
   gap: 20px;
   padding: 10px;
+  color: var(--white);
 }
 
 .cards div {
   display: flex;
   flex-direction: column;
-  border: solid black;
+  background-color: var(--card-background);
   gap: 5px;
   padding: 10px;
+  border-radius: 10px;
 }
 
 button {
-  width: 200px;
+  background-color: var(--button-colour);
+  border: none;
+  color: var(--white);
+  padding: 15px 32px;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 10px;
 }
 
 .popup {
@@ -37,16 +59,36 @@ button {
   align-items: center;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, .5);
+  background: var(--popup-background);
 }
 
 .popup-content {
   width: 500px;
-  height: 500px;
-  background-color: pink;
+  height: 300px;
+  background-color: var(--card-background);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   border-radius: 5px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: var(--white);
+}
+
+#submit {
+  background-color: var(--button-colour);
+  border: none;
+  
+  padding: 15px 32px;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 10px;
 }
